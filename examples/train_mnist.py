@@ -47,7 +47,6 @@ loss_fn = BinaryCrossEntropy
 print("--- Starting Training on Non-Linear Moons Dataset ---")
 model.fit(X, Y, epochs=500, loss_class=loss_fn, optimizer=optimizer, batch_size=32)
 
-# 5. Optional: Verify final accuracy after training completes
 predictions = model.forward(X)
 binary_predictions = (predictions > 0.5).astype(int)
 accuracy = np.mean(binary_predictions == Y) * 100
